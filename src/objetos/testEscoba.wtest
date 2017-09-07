@@ -1,0 +1,56 @@
+import escoba.*
+
+test "La velocidad de una Nimbus 2000 con 100% de salud debe ser 64" 
+{
+	var nimbus = new Nimbus(2000,100)
+	
+	assert.that(nimbus.velocidad() == 64)
+}
+
+test "La velocidad de una Nimbus 2001 con 0% de salud debe ser 0" 
+{
+	var nimbus = new Nimbus(2001, 0.0)
+	
+	assert.that(nimbus.velocidad() == 0)
+}
+
+test "La velocidad de la escoba de Ron Weasly (Nimbus 2000, con 50 % salud) debe ser 32"
+{
+	var escobaRon = new Nimbus(2000,50)
+	
+	assert.that(escobaRon.velocidad() == 32)
+}
+
+test "La velocidad de una SaetaDeFuego debe ser 100" 
+{
+	var saeta = new SaetaDeFuego()
+	
+	assert.that(saeta.velocidad() == 100)
+}
+
+test "Cuando una Nimbus con 100 de salud recibe un golpe, queda con 90"
+{
+	var nimbus = new Nimbus(2001,100)
+	
+	nimbus.recibirGolpe()
+	
+	assert.that(nimbus.salud() == 90)
+}
+
+test "Cuando una Nimbus con 0 de salud recibe un golpe, queda con 0"
+{
+	var nimbus = new Nimbus(2001, 0)
+	
+	nimbus.recibirGolpe()
+	
+	assert.that(nimbus.salud() == 0)
+}
+
+test "Cuando la escoba de Ron Weasly (Nimbus 2000, con 50 % salud) es golpeada su salud queda en 40% "
+{
+	var escobaRon = new Nimbus(2000,50)
+	
+	escobaRon.recibirGolpe()
+	
+	assert.that(escobaRon.salud() == 40)
+}

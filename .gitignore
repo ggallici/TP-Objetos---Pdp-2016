@@ -1,0 +1,12 @@
+# Directories #
+/bin/
+/META-INF/
+/.settings/
+
+######################
+# Wollok
+######################
+
+.classpath 
+.project
+*.properties

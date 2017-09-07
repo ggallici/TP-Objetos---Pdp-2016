@@ -1,0 +1,93 @@
+import fixture.*
+
+test "Harry debe tener 0.5 de manejo de escoba" 
+{
+	assert.that(fixture.harry().nivelManejoEscoba() == 0.5)
+}
+
+test "La velocidad de Ron debe ser 16"
+{
+	assert.that(fixture.ron().velocidad() == 16)
+}
+
+test "La velocidad de Draco debe ser 35.1"
+{
+	assert.that(fixture.draco().velocidad() == 35.1)
+}
+
+test "La velocidad de Harry debe ser 50"
+{
+	assert.that(fixture.harry().velocidad() == 50)
+}
+
+test "Harry(buscador) debe tener una habilidad de 110"
+{
+	assert.that(fixture.harry().habilidad() == 110)
+}
+test "Ginny(cazador) debe tener una habilidad de 282"
+{
+	assert.that(fixture.ginny().habilidad() == 282)
+}
+
+test "Fred(golpeador) debe tener una habilidad de 240"
+{
+	assert.that(fixture.fred().habilidad() == 240)
+}
+
+test "Ron(guardian) debe tener una habilidad de 120.8"
+{
+	assert.that(fixture.ron().habilidad() == 120.8)
+}
+
+test "Fred debe pasarle el trapo a Miles"
+{
+	assert.that(fixture.fred().lePasaElTrapoA(fixture.miles()))
+}
+
+test "Fred no debe pasarle el trapo a Warrington"
+{
+	assert.that(!fixture.fred().lePasaElTrapoA(fixture.warrington()))
+}
+
+test "Cuando Crabbe es golpeado sus skills pasan a ser 78"
+{
+	var vincent = fixture.vincent()
+	
+	vincent.recibirGolpeBludgerDe(fixture.gryffindor())
+	
+	assert.that(vincent.skills() == 78)	
+}
+
+test "Cuando Ron es golpeado sus skills pasan a ser 28"
+{
+	var ron = fixture.ron()
+	
+	ron.recibirGolpeBludgerDe(fixture.slytherin())
+	
+	assert.that(ron.skills() == 28)	
+}
+
+test "Draco debe tener un nivel de manejo de escoba de 0.54"
+{
+	assert.that(fixture.draco().nivelManejoEscoba() == 0.54)
+}
+
+test "Miles Bletchley debe tener 25 de reflejos"
+{
+	assert.that(fixture.miles().reflejos() == 25)
+}
+
+test "Katie Bell debe tener 33.75 de reflejos"
+{
+	assert.that(fixture.katie().reflejos() ==  33.75)
+}
+
+test "Vincen debe pasarle el trapo a harry"
+{
+	assert.that(fixture.vincent().lePasaElTrapoA(fixture.harry()))
+}
+
+test "Vincent no debe pasarle el trapo fred"
+{
+	assert.that(!fixture.vincent().lePasaElTrapoA(fixture.fred()))
+}

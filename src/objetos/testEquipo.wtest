@@ -1,0 +1,26 @@
+import fixture.*
+
+test "un equipo vacio no tiene jugadores grosos" 
+{
+	assert.that(fixture.equipoVacio().jugadoresGrosos().equals(#{}))
+}
+
+test "En Griffindor solo Harry, Fred, Angelina y Katie son grosos"
+{
+	assert.that(fixture.gryffindor().jugadoresGrosos().equals(#{fixture.fred(), fixture.katie(), fixture.angelina()}))
+}
+
+test "En Slytherin solo Warrington y Graham Montague son grosos" 
+{
+	assert.that(fixture.slytherin().jugadoresGrosos().equals(#{fixture.warrington(), fixture.graham()}))
+}
+
+test "Slytherin tiene jugador estrella contra Gryfindor"
+{	
+	assert.that(fixture.slytherin().tieneJugadorEstrellaContra(fixture.gryffindor()))
+}
+
+test "Gryfindor no tiene jugador estrella contra Slytherin"
+{
+	assert.that(!fixture.gryffindor().tieneJugadorEstrellaContra(fixture.slytherin()))
+}
